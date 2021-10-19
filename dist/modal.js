@@ -663,7 +663,7 @@ export class ReactNativeModal extends React.Component {
               {
                 behavior: Platform.OS === 'ios' ? 'padding' : undefined,
                 pointerEvents: 'box-none',
-                style: computedStyle.concat([{margin: 0}]),
+                style: computedStyle.concat([{margin: 0, marginBottom: 20}]),
               },
               containerView,
             )
