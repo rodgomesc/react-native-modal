@@ -824,7 +824,16 @@ export class ReactNativeModal extends React.Component<ModalProps, State> {
           pointerEvents="box-none"
           style={[styles.backdrop, styles.containerBox]}>
           {this.makeBackdrop()}
-          {containerView}
+          {avoidKeyboard ? (
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            pointerEvents="box-none"
+            style={computedStyle.concat([{margin: 0}])}>
+              {containerView}
+            </KeyboardAvoidingView>
+            ) : (
+           containerView
+           )}
         </View>
       );
     }
